@@ -66,21 +66,16 @@ export const Checkout = () => {
     messageText += `⏳ Date: ${orderDate}`;
 
     try {
-      if (TELEGRAM_BOT_TOKEN === "8620257104:AAGE-lP_APOntHaAhU8gEZ7Scj5xIWVxj_g") {
-        console.log("Mock Telegram Message Payload:\n\n", messageText.replace(/<[^>]*>?/gm, ''));
-        await new Promise(resolve => setTimeout(resolve, 1500));
-      } else {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: messageText,
-            parse_mode: 'HTML'
-          })
-        });
-        if (!response.ok) throw new Error('Failed to send telegram message');
-      }
+      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: messageText,
+          parse_mode: 'HTML'
+        })
+      });
+      if (!response.ok) throw new Error('Failed to send telegram message');
 
       setIsSuccess(true);
       clearCart();
