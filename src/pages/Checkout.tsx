@@ -66,7 +66,7 @@ export const Checkout = () => {
     messageText += `⏳ Date: ${orderDate}`;
 
     try {
-      if (TELEGRAM_BOT_TOKEN === "YOUR_BOT_TOKEN") {
+      if (TELEGRAM_BOT_TOKEN === "8620257104:AAGE-lP_APOntHaAhU8gEZ7Scj5xIWVxj_g") {
         console.log("Mock Telegram Message Payload:\n\n", messageText.replace(/<[^>]*>?/gm, ''));
         await new Promise(resolve => setTimeout(resolve, 1500));
       } else {
