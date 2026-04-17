@@ -6,8 +6,8 @@ import { useCart } from '../contexts/CartContext';
 import { useToast } from '../contexts/ToastContext';
 
 // --- TELEGRAM CONFIGURATION ---
-const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN";
-const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID";
+const TELEGRAM_BOT_TOKEN = "8620257104:AAGE-lP_APOntHaAhU8gEZ7Scj5xIWVxj_g";
+const TELEGRAM_CHAT_ID = "7580329356";
 
 export const Checkout = () => {
   const { t, language } = useLanguage();
@@ -23,7 +23,7 @@ export const Checkout = () => {
     commune: '',
     deliveryType: 'homeDelivery'
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -36,7 +36,7 @@ export const Checkout = () => {
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (cartItems.length === 0) {
       addToast(t('emptyCart'));
       return;
@@ -46,7 +46,7 @@ export const Checkout = () => {
 
     const orderDate = new Date().toLocaleString(language === 'ar' ? 'ar-DZ' : 'en-GB');
     let messageText = `📦 <b>NEW ORDER</b> 📦\n\n`;
-    
+
     messageText += `<b>Customer Details:</b>\n`;
     messageText += `👤 Name: ${formData.fullName}\n`;
     messageText += `📱 Phone: ${formData.phone}\n`;
@@ -85,7 +85,7 @@ export const Checkout = () => {
       setIsSuccess(true);
       clearCart();
       addToast(t('orderSuccess'));
-      
+
     } catch (error) {
       console.error(error);
       addToast("Failed to place order. Please try again.");
@@ -114,7 +114,7 @@ export const Checkout = () => {
           Thank you for your order! We have received your request and will contact you shortly to confirm the delivery.
         </p>
         <div className="animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-          <Link 
+          <Link
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-500 transition-all shadow-lg shadow-primary-500/20"
           >
@@ -147,11 +147,10 @@ export const Checkout = () => {
           {steps.map((step, index) => (
             <React.Fragment key={step.label}>
               <div className="flex flex-col items-center gap-2">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-                  step.done ? 'bg-primary-600 text-white' 
-                  : step.active ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 ring-2 ring-primary-500/30' 
-                  : 'bg-gray-100 dark:bg-dark-card text-gray-400'
-                }`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${step.done ? 'bg-primary-600 text-white'
+                    : step.active ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 ring-2 ring-primary-500/30'
+                      : 'bg-gray-100 dark:bg-dark-card text-gray-400'
+                  }`}>
                   <step.icon className="w-4 h-4" />
                 </div>
                 <span className={`text-xs font-medium hidden sm:block ${step.done || step.active ? 'text-gray-900 dark:text-white' : 'text-gray-400'}`}>
@@ -170,7 +169,7 @@ export const Checkout = () => {
         {/* Checkout Form */}
         <div className="lg:w-2/3">
           <form onSubmit={handlePlaceOrder} className="bg-white dark:bg-dark-card p-6 md:p-8 rounded-2xl border border-gray-100 dark:border-dark-border shadow-card space-y-8">
-            
+
             {/* Delivery Details */}
             <div>
               <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
@@ -185,7 +184,7 @@ export const Checkout = () => {
                     <input required type="text" name="fullName" value={formData.fullName} onChange={handleChange} className={inputTheme} placeholder="John Doe" />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">{t('phone')}</label>
                   <div className="relative">
@@ -229,26 +228,24 @@ export const Checkout = () => {
                 <button
                   type="button"
                   onClick={() => setFormData(prev => ({ ...prev, deliveryType: 'homeDelivery' }))}
-                  className={`flex items-center gap-4 p-5 rounded-xl border-2 transition-all ${
-                    formData.deliveryType === 'homeDelivery'
+                  className={`flex items-center gap-4 p-5 rounded-xl border-2 transition-all ${formData.deliveryType === 'homeDelivery'
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/10'
                       : 'border-gray-100 dark:border-dark-border bg-white dark:bg-dark-bg hover:border-gray-300 dark:hover:border-gray-600'
-                  }`}
+                    }`}
                 >
                   <Truck className={`w-6 h-6 shrink-0 ${formData.deliveryType === 'homeDelivery' ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`} />
                   <span className={`font-semibold text-sm ${formData.deliveryType === 'homeDelivery' ? 'text-primary-700 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'}`}>
                     {t('homeDelivery')}
                   </span>
                 </button>
-                
+
                 <button
                   type="button"
                   onClick={() => setFormData(prev => ({ ...prev, deliveryType: 'officePickup' }))}
-                  className={`flex items-center gap-4 p-5 rounded-xl border-2 transition-all ${
-                    formData.deliveryType === 'officePickup'
+                  className={`flex items-center gap-4 p-5 rounded-xl border-2 transition-all ${formData.deliveryType === 'officePickup'
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/10'
                       : 'border-gray-100 dark:border-dark-border bg-white dark:bg-dark-bg hover:border-gray-300 dark:hover:border-gray-600'
-                  }`}
+                    }`}
                 >
                   <Store className={`w-6 h-6 shrink-0 ${formData.deliveryType === 'officePickup' ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'}`} />
                   <span className={`font-semibold text-sm ${formData.deliveryType === 'officePickup' ? 'text-primary-700 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'}`}>
@@ -260,8 +257,8 @@ export const Checkout = () => {
 
             {/* Submit */}
             <div className="pt-6 border-t border-gray-100 dark:border-dark-border">
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full flex items-center justify-center gap-2 bg-primary-600 text-white py-4 rounded-xl font-bold text-base hover:bg-primary-500 active:scale-[0.98] transition-all shadow-lg shadow-primary-500/20 disabled:opacity-70 disabled:pointer-events-none"
               >
@@ -287,7 +284,7 @@ export const Checkout = () => {
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-5 pb-4 border-b border-gray-100 dark:border-dark-border">
               Your Order ({cartItems.length})
             </h2>
-            
+
             <div className="space-y-4 mb-6 max-h-[35vh] overflow-y-auto pr-1">
               {cartItems.map(item => (
                 <div key={item.cartId} className="flex gap-3">

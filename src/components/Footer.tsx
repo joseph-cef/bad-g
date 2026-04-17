@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Mail, MapPin, Phone as PhoneIcon } from 'lucide-react';
 
-const FacebookIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-  </svg>
-);
+// const FacebookIcon = ({ className }: { className?: string }) => (
+//   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+//     <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+//   </svg>
+// );
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -14,17 +14,17 @@ const InstagramIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const TwitterIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+// const TwitterIcon = ({ className }: { className?: string }) => (
+//   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+//     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+//   </svg>
+// );
 
-const TikTokIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.17v-3.44a4.85 4.85 0 01-3.59-1.47V6.69h3.59z" />
-  </svg>
-);
+// const TikTokIcon = ({ className }: { className?: string }) => (
+//   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+//     <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.17v-3.44a4.85 4.85 0 01-3.59-1.47V6.69h3.59z" />
+//   </svg>
+// );
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -36,10 +36,10 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: FacebookIcon, label: 'Facebook', href: '#' },
+    // { icon: FacebookIcon, label: 'Facebook', href: '#' },
     { icon: InstagramIcon, label: 'Instagram', href: '#' },
-    { icon: TwitterIcon, label: 'X (Twitter)', href: '#' },
-    { icon: TikTokIcon, label: 'TikTok', href: '#' },
+    // { icon: TwitterIcon, label: 'X (Twitter)', href: '#' },
+    // { icon: TikTokIcon, label: 'TikTok', href: '#' },
   ];
 
   return (
