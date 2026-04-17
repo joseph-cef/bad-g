@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Minus, Plus, ShoppingCart, ChevronRight, Truck, RotateCcw, Shield } from 'lucide-react';
 import { products } from '../data/products';
@@ -10,7 +10,7 @@ import { ImageGallery } from '../components/ImageGallery';
 export const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const { addToCart } = useCart();
   const { addToast } = useToast();
 

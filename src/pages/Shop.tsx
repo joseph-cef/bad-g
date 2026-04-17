@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { products, type Product } from '../data/products';
+import { products } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
-import { SlidersHorizontal, Grid2x2, Grid3x3 } from 'lucide-react';
+import { SlidersHorizontal, Grid2x2 } from 'lucide-react';
 
 export const Shop = () => {
   const { t } = useLanguage();

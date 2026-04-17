@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Truck, Store, MapPin, Phone, User, CheckCircle2, ArrowRight, Package, CreditCard } from 'lucide-react';
+import { Truck, Store, MapPin, Phone, User, CheckCircle2, ArrowRight, Package } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useCart } from '../contexts/CartContext';
 import { useToast } from '../contexts/ToastContext';

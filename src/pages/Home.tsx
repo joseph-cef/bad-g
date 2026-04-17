@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Truck, Shield, Headphones, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
